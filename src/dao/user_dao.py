@@ -45,8 +45,9 @@ def insert_user(id_user, name, id_type):
 
         con = psycopg2.connect(database='idea_database', user='idea', password='idea')
         cur = con.cursor()
-        cur.execute('INSERT INTO PERSON VALUES ('+ id_user + ', ' + name + ', ' + name + ', ' + name + ', ' + id_type)
-        print '## INFO: User selected succesfully!!!'
+        cur.execute('INSERT INTO PERSON (ID_USER, NAME, USERNAME, PASSWORD, ID_TYPE) VALUES (' + id_user + ', \'' + name + '\', \'' + name + '\', \'' + name + '\', ' + id_type + ')')
+	con.commit()
+        print '## INFO: User inserted succesfully!!!'
 
 
     except psycopg2.DatabaseError, e:

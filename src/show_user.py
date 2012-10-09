@@ -1,7 +1,13 @@
-import dao/user_dao.py
+#!/usr/bin/python
 
+from dao import * 
+
+print('## INFO: Iniciando...')
 id_user = input('User id: ')
+print('## INFO: Salvando id_user')
 user = input('Write yout name: ')
-id_type = ('User type: (1-Adm, 2-Idea Creator, 3-Investor')
+print('## INFO: Salvando user')
+id_type = input('User type: (1-Adm, 2-Idea Creator, 3-Investor')
+print('## INFO: Salvando id_type')
 
-insert_user(user)
+user_dao.insert_user(id_user, user, id_type)
